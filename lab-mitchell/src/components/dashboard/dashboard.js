@@ -7,7 +7,7 @@ class Dashboard extends React.Component {
   render() {
     return(
       <section>
-        <h1>Welcome to my Kanban Board</h1>
+        <h1>Welcome to your personal poverty reminder</h1>
 
         <CategoryForm
           buttonText='create'

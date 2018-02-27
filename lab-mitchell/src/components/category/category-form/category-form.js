@@ -6,7 +6,8 @@ class CategoryForm extends React.Component {
     this.state = this.props.category
       ? this.props.category
       : { //IN CASE SOMETHING IS NOT PASSED DOWN THROUGH PROPS
-        title: '',
+        name: '',
+        budget: 0,
       };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);  
@@ -27,10 +28,14 @@ class CategoryForm extends React.Component {
       <form className='category-form' onSubmit={this.handleSubmit}>
         <input 
           type='text'
-          name='title'
+          name='name'
           value={this.state.title}
-          onChange={this.handleChange}
-        />
+          onChange={this.handleChange} />
+        <input 
+          type='number'
+          name='budget'
+          value={this.state.title}
+          onChange={this.handleChange} />
 
         <button type='submit'>{this.props.buttonText}</button>
       </form>
