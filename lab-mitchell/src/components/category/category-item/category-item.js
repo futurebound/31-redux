@@ -19,11 +19,15 @@ class CategoryItem extends React.Component {
     this.props.itemCategoryDelete(this.state);
   }
 
+  // handleOnDouble
+
   render() {
     return (
-      <div className='category-item'>
-        <p>Name: {this.state.category.name}</p>
-        <p>Budget: {this.state.category.budget}</p>
+      <div className='category-item'
+        onDoubleClick={this.handleEditing}>
+        <p>Name: {this.props.category.name}</p>
+        <p>Budget: {this.props.category.budget}</p>
+        <button onClick={this.handleOnClick}>Delete</button>
       </div>
     );
   }

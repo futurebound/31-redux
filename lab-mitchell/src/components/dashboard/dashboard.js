@@ -34,3 +34,19 @@ const mapDispatchToProps = (dispatch, getState) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+
+
+//-------------------------------
+// THIS SHIT A CURRIED FUNCTION
+//-------------------------------
+
+// function numOne(numOne) {
+//   return function numTwo(numTwo) {
+//     return numOne + numTwo;
+//   };
+// };
+
+// let numOne = numOne => numTwo => numOne + numTwo
+
+// let addFour = numOne(4);
+// addFour(10) => 14;

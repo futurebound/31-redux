@@ -13,12 +13,14 @@ class CategoryForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);  
   }
 
+
   handleChange(e) {
     this.setState({[e.target.name]: e.target.value});
   }
 
   handleSubmit(e) {
-    e.prevenDefault();
+    e.preventDefault();
+    this.setState({name: '', budget: ''});
     this.props.onComplete(this.state);
   }
 
