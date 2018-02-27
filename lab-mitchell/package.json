@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack",
+    "lint": "eslint .",
     "test": "jest",
     "watch": "webpack-dev-server --inline --hot"
   },

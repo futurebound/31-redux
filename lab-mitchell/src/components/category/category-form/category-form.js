@@ -5,8 +5,9 @@ class CategoryForm extends React.Component {
     super(props);
     this.state = this.props.category
       ? this.props.category
-      : { //IN CASE SOMETHING IS NOT PASSED DOWN THROUGH PROPS
-        title: '',
+      : {
+        name: '',
+        budget: null,
       };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);  
@@ -21,16 +22,19 @@ class CategoryForm extends React.Component {
     this.props.onComplete(this.state);
   }
 
-  //this.props.buttonText SO THAT IT DYNAMIC, CAN DO CHANGE/SUBMIT/UPDATE/LEAVE ETC
   render() {
     return (
       <form className='category-form' onSubmit={this.handleSubmit}>
         <input 
           type='text'
-          name='title'
-          value={this.state.title}
-          onChange={this.handleChange}
-        />
+          name='name'
+          value={this.state.name}
+          onChange={this.handleChange} />
+        <input 
+          type='number'
+          name='budget'
+          value={this.state.budget}
+          onChange={this.handleChange} />
 
         <button type='submit'>{this.props.buttonText}</button>
       </form>
