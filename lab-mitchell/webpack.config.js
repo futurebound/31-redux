@@ -50,7 +50,7 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|ttf|eot|glyph|svg)$/,
-        user: [
+        use: [
           {
             loader: 'url-loader',
             options: {

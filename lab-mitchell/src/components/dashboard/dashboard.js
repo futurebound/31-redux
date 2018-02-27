@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {categoryCreate} from '../../actions/category-actions';
+import {categoryCreate} from '../../actions/category-action';
 import CategoryForm from '../category/category-form/category-form';
 import CategoryItem from '../category/category-item/category-item';
 
@@ -14,8 +14,8 @@ class Dashboard extends React.Component {
           buttonText='create'
           onComplete={this.props.dashboardCategoryCreate} />
 
-        {this.props.categories ?
-          this.props.categories.map(category =>
+        {this.props.category ?
+          this.props.category.map(category =>
             <CategoryItem category={category} />)
           :
           undefined

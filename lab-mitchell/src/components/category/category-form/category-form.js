@@ -7,7 +7,7 @@ class CategoryForm extends React.Component {
       ? this.props.category
       : {
         name: '',
-        budget: null,
+        budget: '',
       };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);  

@@ -21,7 +21,9 @@ class CategoryItem extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='category-item'>
+        <p>Name: {this.state.category.name}</p>
+        <p>Budget: {this.state.category.budget}</p>
       </div>
     );
   }
