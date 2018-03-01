@@ -32,12 +32,14 @@ class CategoryForm extends React.Component {
           type='text'
           name='name'
           value={this.state.name}
-          onChange={this.handleChange} />
+          onChange={this.handleChange}
+          placeholder='name' />
         <input 
           type='number'
           name='budget'
           value={this.state.budget}
-          onChange={this.handleChange} />
+          onChange={this.handleChange}
+          placeholder='budget' />
 
         <button type='submit'>{this.props.buttonText}</button>
       </form>
