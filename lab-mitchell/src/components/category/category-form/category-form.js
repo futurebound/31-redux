@@ -8,6 +8,7 @@ class CategoryForm extends React.Component {
       : {
         name: '',
         budget: '',
+        editing: false,
       };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);  
@@ -20,8 +21,8 @@ class CategoryForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.setState({name: '', budget: ''});
     this.props.onComplete(this.state);
+    this.setState({name: '', budget: '', editing: false});
   }
 
   render() {

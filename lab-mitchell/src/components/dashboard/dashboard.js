@@ -16,7 +16,9 @@ class Dashboard extends React.Component {
 
         {this.props.category ?
           this.props.category.map(category =>
-            <CategoryItem category={category} />)
+            <CategoryItem 
+              category={category} 
+              key={category.id}/>)
           :
           undefined
         }

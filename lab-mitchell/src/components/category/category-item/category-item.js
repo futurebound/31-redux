@@ -10,24 +10,41 @@ class CategoryItem extends React.Component {
     super(props);
     this.state = {
       category: this.props.category ? this.props.category : undefined,
+      editing: false,
     };
 
-    this.handleOnClick = this.handleOnClick.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleEditing = this.handleEditing.bind(this);
+    // this.handleUpdate = this.handleUpdate.bind(this);
   }
 
-  handleOnClick() {
-    this.props.itemCategoryDelete(this.state);
+  handleDelete() {
+    this.props.itemCategoryDelete(this.state.category);
   }
 
-  // handleOnDouble
+  handleEditing() {
+    this.setState({editing: !this.state.editing});
+  }
+
+  // handleUpdate(category) {
+  //   this.props.itemCategoryUpdate(this.state);
+  //   this.setState({editing: !this.state.category.editing});
+  // }
 
   render() {
     return (
       <div className='category-item'
+        key={this.props.category.id}
         onDoubleClick={this.handleEditing}>
         <p>Name: {this.props.category.name}</p>
         <p>Budget: {this.props.category.budget}</p>
-        <button onClick={this.handleOnClick}>Delete</button>
+        <button onClick={this.handleDelete}>Delete</button>
+        {renderIf(this.state.editing, 
+          <CategoryForm
+            category={this.props.category}
+            buttonText='update'
+            onComplete={this.props.itemCategoryUpdate}/>
+        )}
       </div>
     );
   }
@@ -38,6 +55,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
+  itemCategoryUpdate: category => dispatch(categoryUpdate(category)),
   itemCategoryDelete: category => dispatch(categoryDelete(category)),
 });
 
